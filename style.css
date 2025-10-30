@@ -91,6 +91,27 @@ button {
   font-family: "Inter", sans-serif;
 }
 
+/* ---------- EFEITOS DE VITÓRIA ---------- */
+.vitoria {
+  animation: fundo-brilhando 1.5s infinite alternate;
+}
+
+@keyframes fundo-brilhando {
+  from { background-color: rgba(24, 117, 232, 0.2); }
+  to { background-color: rgba(24, 117, 232, 0.4); }
+}
+
+.confete {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("img/confetti.gif") center/contain no-repeat;
+  pointer-events: none;
+  z-index: 999;
+  animation: aparecer 1s ease forwards;
+}
+
+
 h2 {
   font-size: 32px;
   font-weight: 400;
