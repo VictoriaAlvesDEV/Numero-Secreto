@@ -31,7 +31,6 @@ while (chute != numeroSecreto) {
 
   if (chute === numeroSecreto) {
     // ✅ Acertou
-    tocarSom("./sounds/vitoria.mp3"); // opcional
     document.body.classList.add("vitoria"); // anima o fundo
 
     alert(`🎉 Boaaa! Você acertou o número secreto ${numeroSecreto}!`);
@@ -73,3 +72,4 @@ function mostrarVitoria(numero, tentativas) {
   botao.addEventListener("click", () => window.location.reload());
   document.body.appendChild(botao);
 }
+
