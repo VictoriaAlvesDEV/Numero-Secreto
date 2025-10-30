@@ -31,6 +31,7 @@ while (chute != numeroSecreto) {
 
   if (chute === numeroSecreto) {
     // ✅ Acertou
+    tocarSom("./sounds/vitoria.mp3"); // opcional
     document.body.classList.add("vitoria"); // anima o fundo
 
     alert(`🎉 Boaaa! Você acertou o número secreto ${numeroSecreto}!`);
@@ -58,6 +59,10 @@ if (chute != null) {
 // ======================================================
 // 🎆 Função visual pós-vitória
 // ======================================================
+function mostrarVitoria(numero, tentativas) {
+  const confete = document.createElement("div");
+  confete.classList.add("confete");
+  document.body.appendChild(confete);
 
   const botao = document.createElement("button");
   botao.textContent = "🔁 Jogar novamente";
@@ -68,5 +73,7 @@ if (chute != null) {
   botao.addEventListener("click", () => window.location.reload());
   document.body.appendChild(botao);
 }
+
+
 
 
