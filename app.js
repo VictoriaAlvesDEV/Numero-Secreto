@@ -58,10 +58,6 @@ if (chute != null) {
 // ======================================================
 // 🎆 Função visual pós-vitória
 // ======================================================
-function mostrarVitoria(numero, tentativas) {
-  const confete = document.createElement("div");
-  confete.classList.add("confete");
-  document.body.appendChild(confete);
 
   const botao = document.createElement("button");
   botao.textContent = "🔁 Jogar novamente";
@@ -72,4 +68,5 @@ function mostrarVitoria(numero, tentativas) {
   botao.addEventListener("click", () => window.location.reload());
   document.body.appendChild(botao);
 }
+
 
