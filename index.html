@@ -1,35 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo do Número Secreto 🎯</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-    <title>JS Game</title>
   </head>
 
   <body>
     <div class="container">
       <div class="container__conteudo">
+        <!-- Imagem do robô -->
         <img
           src="./img/robot ai.png"
           alt="robô mergulhador"
           class="container__imagem-robo"
         />
+
+        <!-- Área de informações e jogo -->
         <div class="container__informacoes">
           <img src="./img/trophy.png" alt="ícone de um troféu" />
+
           <div class="container__texto">
-            <h1>Você <span class="container__texto-azul">arrasou!</span></h1>
-            <h2>Você descobriu o número secreto!</h2>
+            <h1>Descubra o <span class="container__texto-azul">número secreto!</span></h1>
+            <h2>Escolha um número de 1 a 10</h2>
           </div>
+
+          <!-- Campo de entrada e botão -->
+          <input
+            type="number"
+            id="inputChute"
+            min="1"
+            max="10"
+            placeholder="Digite seu palpite"
+            class="container__botao"
+            style="width: 100%; margin-bottom: 10px;"
+          />
+
+          <button id="btnChutar" class="container__botao">Chutar</button>
+
+          <!-- Exibe mensagens e resultado -->
+          <p id="mensagem" style="margin-top: 16px; font-size: 20px;"></p>
         </div>
       </div>
     </div>
-    <script src="app.js" defer></script>
+
+    <script>
+      // ======================================================
+      // 🎮 JOGO DO NÚMERO SECRETO (versão visual)
+      // ======================================================
+      const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+      let tentativas = 1;
+
+      const input = document.getElementById("inputChute");
+      const botao = document.getElementById("btnChutar");
+      const mensagem = document.getElementById("mensagem");
+
+      botao.addEventListener("click", () => {
+        const chute = Number(input.value);
+
+        if (!chute || chute < 1 || chute > 10) {
+          mensagem.textContent = "❌ Digite um número válido entre 1 e 10!";
+          return;
+        }
+
+        if (chute === numeroSecreto) {
+          document.body.classList.add("vitoria");
+          mensagem.innerHTML = `🎉 Você acertou! O número secreto era <strong>${numeroSecreto}</strong>.<br> Tentativas: ${tentativas}`;
+
+          // Cria confete
+          const confete = document.createElement("div");
+          confete.classList.add("confete");
+          document.body.appendChild(confete);
+
+          // Troca botão para reiniciar
+          botao.textContent = "🔁 Jogar novamente";
+          botao.onclick = () => window.location.reload();
+          input.disabled = true;
+        } else {
+          const dica =
+            chute > numeroSecreto
+              ? `O número secreto é menor que ${chute} 👇`
+              : `O número secreto é maior que ${chute} 👆`;
+          mensagem.textContent = dica;
+          tentativas++;
+        }
+
+        input.value = "";
+        input.focus();
+      });
+    </script>
   </body>
 </html>
+
