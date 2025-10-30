@@ -77,12 +77,7 @@
         if (chute === numeroSecreto) {
           document.body.classList.add("vitoria");
           mensagem.innerHTML = `🎉 Você acertou! O número secreto era <strong>${numeroSecreto}</strong>.<br> Tentativas: ${tentativas}`;
-
-          // Cria confete
-          const confete = document.createElement("div");
-          confete.classList.add("confete");
-          document.body.appendChild(confete);
-
+          
           // Troca botão para reiniciar
           botao.textContent = "🔁 Jogar novamente";
           botao.onclick = () => window.location.reload();
