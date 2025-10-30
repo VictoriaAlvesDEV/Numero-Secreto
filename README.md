@@ -7,7 +7,7 @@ O projeto combina **design animado**, **feedbacks interativos** e **efeitos visu
 
 ## 🖼️ Demonstração  
 
-!(./img/preview.png)  
+![preview do jogo](./img/preview.gif)  
 
 ## 🚀 Funcionalidades  
 
