@@ -52,8 +52,10 @@ body::before {
 }
 
 .container__imagem-robo {
-  margin-left: -110px;
-  margin-top: -180px;
+  width: 300px; /* aumenta o tamanho */
+  height: auto;
+  margin-left: -50px; /* ajusta a posição horizontal */
+  margin-top: -100px; /* ajusta a posição vertical */
 }
 
 .container__informacoes {
@@ -91,14 +93,39 @@ button {
   font-family: "Inter", sans-serif;
 }
 
+h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
 /* ---------- EFEITOS DE VITÓRIA ---------- */
 .vitoria {
   animation: fundo-brilhando 1.5s infinite alternate;
 }
 
 @keyframes fundo-brilhando {
-  from { background-color: rgba(24, 117, 232, 0.2); }
-  to { background-color: rgba(24, 117, 232, 0.4); }
+  from {
+    background-color: rgba(24, 117, 232, 0.2);
+  }
+  to {
+    background-color: rgba(24, 117, 232, 0.4);
+  }
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.container__imagem-robo {
+  animation: flutuar 2s ease-in-out infinite;
 }
 
 .confete {
@@ -109,10 +136,4 @@ button {
   pointer-events: none;
   z-index: 999;
   animation: aparecer 1s ease forwards;
-}
-
-
-h2 {
-  font-size: 32px;
-  font-weight: 400;
 }
