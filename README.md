@@ -1,5 +1,8 @@
 # 🎯 Jogo do Número Secreto  
 
+<p align="center">
+<a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</p>
+ 
 Um mini game divertido desenvolvido com **HTML**, **CSS** e **JavaScript**, onde o jogador precisa adivinhar um número secreto entre **1 e 10**.  
 O projeto combina **design animado**, **feedbacks interativos** e **efeitos visuais** de vitória (como confete e brilho no fundo).  
 
@@ -21,7 +24,7 @@ O projeto combina **design animado**, **feedbacks interativos** e **efeitos visu
 
 ---
 
-## 🧠 Tecnologias Utilizadas  
+## 🧠 Tecnologias  
 
 | Tecnologia | Função |
 |-------------|--------|
